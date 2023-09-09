@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="673.0" prefWidth="1135.0" style="-fx-background-color: #C2DED1;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="playstation.TablesController">
+   <center>
+      <Pane fx:id="containerOfTable" prefHeight="502.0" prefWidth="1066.0" BorderPane.alignment="CENTER">
+         <children>
+            <ScrollPane layoutX="-1.0" layoutY="-1.0" prefHeight="579.0" prefWidth="1135.0">
+               <content>
+                  <FlowPane fx:id="AllTables" nodeOrientation="RIGHT_TO_LEFT" prefHeight="568.0" prefWidth="1133.0" style="-fx-background-color: # #1A5F7A;" stylesheets="@styleSheetForTables.css" />
+               </content>
+            </ScrollPane>
+         </children></Pane>
+   </center>
+   <top>
+      <Pane prefHeight="109.0" prefWidth="1066.0" style="-fx-background-color: #CDC2AE;" BorderPane.alignment="CENTER">
+         <children>
+            <Label alignment="CENTER" layoutX="481.0" layoutY="29.0" prefHeight="30.0" prefWidth="173.0" text="الطاولات ">
+               <font>
+                  <Font name="Calibri" size="38.0" />
+               </font>
+            </Label>
+            <Button alignment="CENTER" layoutX="1003.0" layoutY="51.0" mnemonicParsing="false" onAction="#addNewTable" prefHeight="43.0" prefWidth="114.0" text=" اضافة ">
+               <graphic>
+                  <ImageView fitHeight="29.0" fitWidth="57.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@table.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="OPEN_HAND" />
+               </cursor>
+            </Button>
+         </children>
+      </Pane>
+   </top>
+</BorderPane>

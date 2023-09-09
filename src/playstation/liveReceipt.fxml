@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="692.0" prefWidth="1217.0" style="-fx-background-color: #1A5F7A;" stylesheets="@style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="playstation.liveReceiptController">
+   <top>
+      <Pane prefHeight="41.0" prefWidth="1284.0" style="-fx-background-color: #DDDDDD;" BorderPane.alignment="CENTER">
+         <children>
+            <Label alignment="CENTER" layoutX="572.0" layoutY="-7.0" prefHeight="48.0" prefWidth="160.0" text="فاتورة بيع" textAlignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="39.0" fitWidth="41.0" layoutX="553.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@cafe.png" />
+               </image>
+            </ImageView>
+            <Label alignment="CENTER" layoutX="1104.0" prefHeight="36.0" prefWidth="77.0" text="رقم الفاتورة :" textAlignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txt_receiptNumber" alignment="CENTER" disable="true" layoutX="1010.0" layoutY="3.0" prefHeight="35.0" prefWidth="94.0">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </TextField>
+         </children>
+      </Pane>
+   </top>
+   <right>
+      <AnchorPane prefHeight="676.0" prefWidth="1223.0" BorderPane.alignment="CENTER">
+         <children>
+            <TextField fx:id="txt_itemCode" alignment="CENTER" layoutX="343.0" layoutY="358.0" prefHeight="30.0" prefWidth="206.0">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </TextField>
+            <Button layoutX="540.0" layoutY="506.0" mnemonicParsing="false" onAction="#addITemToTable" prefHeight="34.0" prefWidth="97.0" style="-fx-background-color: #39A2DB;" text="أضافة " textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="24.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@buy.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="OPEN_HAND" />
+               </cursor>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </Button>
+            <Label alignment="CENTER" layoutX="546.0" layoutY="403.0" prefHeight="29.0" prefWidth="83.0" text="الكمية :" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txt_receiptQuantity" alignment="CENTER" layoutX="343.0" layoutY="403.0" prefHeight="30.0" prefWidth="205.0" text="1">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </TextField>
+            <Label alignment="CENTER" layoutX="554.0" layoutY="441.0" prefHeight="40.0" prefWidth="86.0" text="سعر البيع : " textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <TableView fx:id="table_cafeBuy" layoutX="680.0" layoutY="336.0" nodeOrientation="RIGHT_TO_LEFT" onMouseClicked="#selectAndShow" prefHeight="227.0" prefWidth="527.0">
+              <columns>
+                <TableColumn fx:id="col_codeItem" prefWidth="102.0" text="كود الصنف" />
+                  <TableColumn fx:id="col_codeName" prefWidth="140.0" text="اسم الصنف" />
+                <TableColumn fx:id="col_codeQuantity" prefWidth="37.0" text="ك" />
+                  <TableColumn fx:id="colPayPrice" prefWidth="48.0" text="سعر" />
+                  <TableColumn fx:id="col_total" prefWidth="42.0" text="ج" />
+                  <TableColumn fx:id="col_repository" prefWidth="40.0" text="المخزن" />
+              </columns>
+            </TableView>
+            <TextField fx:id="txt_receiptPay" alignment="CENTER" layoutX="342.0" layoutY="449.0" prefHeight="30.0" prefWidth="205.0">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </TextField>
+            <Label alignment="CENTER" layoutX="1091.0" layoutY="284.0" prefHeight="28.0" prefWidth="113.0" text="تاريخ الفاتورة :" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <DatePicker fx:id="datePicker" layoutX="943.0" layoutY="286.0" prefHeight="20.0" prefWidth="146.0" />
+            <Label alignment="CENTER" layoutX="1116.0" layoutY="578.0" prefHeight="25.0" prefWidth="83.0" text="الاجمالي :" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txt_total" alignment="CENTER" layoutX="1033.0" layoutY="575.0" prefHeight="30.0" prefWidth="83.0" text="0">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </TextField>
+            <Button layoutX="331.0" layoutY="506.0" mnemonicParsing="false" onAction="#deleteItem" prefHeight="36.0" prefWidth="80.0" style="-fx-background-color: #FF3D68;" text="مسح" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="31.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@delete.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="OPEN_HAND" />
+               </cursor>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </Button>
+            <Button layoutX="260.0" layoutY="596.0" mnemonicParsing="false" onAction="#saveButton" prefHeight="41.0" prefWidth="118.0" style="-fx-background-color: #FF7600;" text="طباعة" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="26.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@print.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="OPEN_HAND" />
+               </cursor>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </Button>
+            <RadioButton fx:id="radioName" layoutX="228.0" layoutY="363.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="89.0" text="البحث بالاسم " textFill="WHITE" />
+            <Label alignment="CENTER" layoutX="562.0" layoutY="355.0" prefHeight="35.0" prefWidth="94.0" text="البحث بالكود :" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="859.0" layoutY="286.0" prefHeight="20.0" prefWidth="75.0" text="المخزن : " textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <ComboBox fx:id="combo_repositorty" layoutX="714.0" layoutY="286.0" prefHeight="18.0" prefWidth="139.0" />
+            <Label fx:id="lbl_itemName" alignment="CENTER" layoutX="328.0" layoutY="321.0" prefHeight="34.0" prefWidth="252.0" text="اسم الصنف ؟" textAlignment="CENTER" textFill="#00d32a">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="950.0" layoutY="577.0" prefHeight="26.0" prefWidth="72.0" text="المدفوع :" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txt_payed" alignment="CENTER" layoutX="863.0" layoutY="574.0" onInputMethodTextChanged="#checkReminder" onKeyReleased="#checkReminder" prefHeight="30.0" prefWidth="87.0" text="0">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </TextField>
+            <Label alignment="CENTER" layoutX="782.0" layoutY="575.0" prefHeight="26.0" prefWidth="72.0" text="المتبقي : " textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txt_reminder" alignment="CENTER" disable="true" layoutX="682.0" layoutY="574.0" onAction="#checkReminder" prefHeight="30.0" prefWidth="103.0" text="0">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="txt_playerName" alignment="CENTER" layoutX="236.0" layoutY="284.0" onMouseClicked="#cash" prefHeight="30.0" prefWidth="183.0" text="كاش ">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </TextField>
+            <Label alignment="CENTER" layoutX="432.0" layoutY="286.0" prefHeight="22.0" prefWidth="64.0" text="العميل :" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="632.0" layoutY="286.0" prefHeight="22.0" prefWidth="69.0" text="الخزينة :" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <ComboBox fx:id="comboSafe" layoutX="510.0" layoutY="286.0" prefHeight="25.0" prefWidth="123.0" />
+            <Button layoutX="438.0" layoutY="505.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="89.0" style="-fx-background-color: #29C7AC;" text="تعديل" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="27.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@edit%20png%20icon.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="OPEN_HAND" />
+               </cursor>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </Button>
+            <ScrollPane layoutX="199.0" layoutY="-3.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="280.0" prefWidth="1018.0">
+               <content>
+                  <FlowPane fx:id="itemPane" hgap="10.0" prefHeight="277.0" prefWidth="1005.0" vgap="10.0" />
+               </content>
+            </ScrollPane>
+         </children>
+      </AnchorPane>
+   </right>
+   <left>
+      <ScrollPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <content>
+            <VBox fx:id="sectionVB" alignment="TOP_CENTER" prefHeight="800.0" prefWidth="197.0" spacing="10.0" />
+         </content>
+      </ScrollPane>
+   </left>
+</BorderPane>

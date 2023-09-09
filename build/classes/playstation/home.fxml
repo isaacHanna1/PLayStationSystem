@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minWidth="-Infinity" nodeOrientation="RIGHT_TO_LEFT" prefHeight="710.0" prefWidth="1271.0" style="-fx-background-color: #413F42;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="playstation.homeController">
+   <top>
+      <Pane prefHeight="51.0" prefWidth="979.0" style="-fx-background-color: #DDDDDD;" BorderPane.alignment="CENTER">
+         <children>
+            <Label fx:id="lbl_companyName" layoutX="599.0" layoutY="9.0" text="MO SALAH">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+            <Circle fill="DODGERBLUE" layoutX="1244.0" layoutY="26.0" radius="14.0" stroke="BLACK" strokeType="INSIDE" />
+            <Label fx:id="lbl_activeUser" layoutX="1092.0" layoutY="8.0" prefHeight="35.0" prefWidth="236.0" text="MO SALAH">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="22.0" layoutY="13.0" prefHeight="22.0" prefWidth="69.0" text="الخزينة :" textAlignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <ComboBox fx:id="comboSafe" layoutX="137.0" layoutY="13.0" prefHeight="25.0" prefWidth="123.0" />
+         </children>
+      </Pane>
+   </top>
+   <left>
+      <BorderPane nodeOrientation="RIGHT_TO_LEFT" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <top>
+            <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <MenuBar fx:id="menuBar" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" nodeOrientation="RIGHT_TO_LEFT" prefHeight="40.0" prefWidth="1695.0">
+                     <menus>
+                        <Menu mnemonicParsing="false">
+                           <items>
+                              <MenuItem mnemonicParsing="false" onAction="#openMainDataWindow" text="البيانات الاساسية" />
+                              <MenuItem mnemonicParsing="false" onAction="#openUserWindow" text="مستخدم النظام" />
+                              <MenuItem disable="true" mnemonicParsing="false" onAction="#openroomAdminWindow" text="اداراة الغرف" />
+                           </items>
+                           <graphic>
+                              <Label text="بيانات المحل ">
+                                 <graphic>
+                                    <ImageView fitHeight="32.0" fitWidth="52.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@mainInstruction.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                           </graphic>
+                        </Menu>
+                        <Menu mnemonicParsing="false">
+                           <graphic>
+                              <Label text="الموردين">
+                                 <graphic>
+                                    <ImageView fitHeight="32.0" fitWidth="52.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@suppliers.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                           </graphic>
+                           <items>
+                              <MenuItem mnemonicParsing="false" onAction="#openSupplierWindow" text="الموردين" />
+                           </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false">
+                           <items>
+                              <MenuItem mnemonicParsing="false" onAction="#openRepositoryWindow" text="المخازن" />
+                              <MenuItem mnemonicParsing="false" onAction="#StockTaking" text="جرد المخازن" />
+                           </items>
+                           <graphic>
+                              <Label text="المخازن">
+                                 <graphic>
+                                    <ImageView fitHeight="32.0" fitWidth="52.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@stc.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                           </graphic>
+                        </Menu>
+                        <Menu mnemonicParsing="false">
+                           <items>
+                              <MenuItem mnemonicParsing="false" onAction="#openCafeSectionWindow" text="الاقسام" />
+                           </items>
+                           <graphic>
+                              <Label text="الاقسام ">
+                                 <graphic>
+                                    <ImageView fitHeight="32.0" fitWidth="52.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@department-icon-21.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                           </graphic>
+                        </Menu>
+                        <Menu mnemonicParsing="false">
+                           <items>
+                              <MenuItem mnemonicParsing="false" onAction="#openCafeItemWindow" text="الاصناف" />
+                              <MenuItem mnemonicParsing="false" onAction="#openBarCodeWindow" text="طباعة الباركود" />
+                           </items>
+                           <graphic>
+                              <Label text="الاصناف">
+                                 <graphic>
+                                    <ImageView fitHeight="32.0" fitWidth="52.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@cafe.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                           </graphic>
+                        </Menu>
+                        <Menu mnemonicParsing="false">
+                           <items>
+                              <MenuItem mnemonicParsing="false" onAction="#openAddcustomerWindow" text="العميل" />
+                           </items>
+                           <graphic>
+                              <Label text="العملاء">
+                                 <graphic>
+                                    <ImageView fitHeight="32.0" fitWidth="52.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@manager-4-256.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                           </graphic>
+                        </Menu>
+                        <Menu mnemonicParsing="false">
+                           <items>
+                              <MenuItem mnemonicParsing="false" onAction="#openBuyGoodsCafeWindow" text="فواتير شراء" />
+                              <MenuItem mnemonicParsing="false" onAction="#openLiveWindow" text="فواتير بيع" />
+                           </items>
+                           <graphic>
+                              <Label text="الفواتير ">
+                                 <graphic>
+                                    <ImageView fitHeight="32.0" fitWidth="52.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@receip.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                           </graphic>
+                        </Menu>
+                        <Menu mnemonicParsing="false">
+                           <items>
+                              <MenuItem mnemonicParsing="false" onAction="#openNewFatherWindow" text="حساب اب" />
+                              <MenuItem mnemonicParsing="false" onAction="#openNewSonWindow" text="حساب ابن" />
+                           </items>
+                           <graphic>
+                              <Label text="الحسابات">
+                                 <graphic>
+                                    <ImageView fitHeight="32.0" fitWidth="52.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@accounts.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                           </graphic>
+                        </Menu>
+                        <Menu mnemonicParsing="false">
+                           <items>
+                              <MenuItem mnemonicParsing="false" onAction="#openSafeWindow" text="اضافة خزينة" />
+                              <MenuItem mnemonicParsing="false" onAction="#ReceivingMoneyInSave" text="استلام نقدية" />
+                              <MenuItem mnemonicParsing="false" onAction="#outMoneyTo" text="صرف نقدية" />
+                              <MenuItem mnemonicParsing="false" onAction="#showingMoneyInSave" text="استعلام خزائن" />
+                           </items>
+                           <graphic>
+                              <Label text="الخزينة">
+                                 <graphic>
+                                    <ImageView fitHeight="32.0" fitWidth="52.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@safe.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                           </graphic>
+                        </Menu>
+                        <Menu mnemonicParsing="false">
+                           <items>
+                              <MenuItem mnemonicParsing="false" onAction="#openTableWindo" text="الطاولات" />
+                           </items>
+                           <graphic>
+                              <Label text="الطاولات ">
+                                 <graphic>
+                                    <ImageView fitHeight="32.0" fitWidth="52.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@table.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                           </graphic>
+                        </Menu>
+                        <Menu mnemonicParsing="false">
+                           <items>
+                              <MenuItem disable="true" mnemonicParsing="false" onAction="#openSectionWindow" text="الاقسام" />
+                              <MenuItem disable="true" mnemonicParsing="false" onAction="#openOfferWindowWindow" text="العروض" />
+                              <MenuItem disable="true" mnemonicParsing="false" onAction="#openNewDeviceWindow" text="شراء اجهزة والعاب" />
+                              <MenuItem disable="true" mnemonicParsing="false" onAction="#openControlWindow" text="دخول النظام " />
+                           </items>
+                           <graphic>
+                              <Label disable="true" text="games">
+                                 <graphic>
+                                    <ImageView fitHeight="32.0" fitWidth="52.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@games.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                           </graphic>
+                        </Menu>
+                        <Menu mnemonicParsing="false">
+                           <items>
+                              <MenuItem mnemonicParsing="false" onAction="#openPlayerAccountWindow" text="حساب مورد وعميل" />
+                              <MenuItem mnemonicParsing="false" onAction="#openProfitReceiptWindow" text="ارباح فواتير بيع " />
+                              <MenuItem mnemonicParsing="false" onAction="#openAllBuyReceipt" text="فواتير شراء" />
+                              <MenuItem mnemonicParsing="false" onAction="#openBarAccountSummary" text="كشف حساب بالمصروفات" />
+                              <MenuItem mnemonicParsing="false" onAction="#openDetailedReportWindo" text="تقرير عن صالة الالعاب " />
+                              <MenuItem mnemonicParsing="false" onAction="#openReportAboutEachDevice" text="تقرير عن كل جهاز" />
+                           </items>
+                           <graphic>
+                              <Label text="التقرير">
+                                 <graphic>
+                                    <ImageView fitHeight="32.0" fitWidth="52.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@print.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                           </graphic>
+                        </Menu>
+                     </menus>
+                  </MenuBar>
+               </children>
+            </Pane>
+         </top>
+      </BorderPane>
+   </left>
+</BorderPane>

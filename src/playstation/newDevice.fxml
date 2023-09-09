@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="590.0" prefWidth="1364.0" style="-fx-background-color: #1A5F7A;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="playstation.newDeviceController">
+   <top>
+      <Pane prefHeight="45.0" prefWidth="553.0" style="-fx-background-color: #DDDDDD;" BorderPane.alignment="CENTER">
+         <children>
+            <Label alignment="CENTER" layoutX="544.0" layoutY="-10.0" prefHeight="65.0" prefWidth="160.0" text="جديد" textAlignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="39.0" fitWidth="41.0" layoutX="525.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@buy.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+   </top>
+   <bottom>
+      <AnchorPane prefHeight="536.0" prefWidth="1370.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label alignment="CENTER" layoutX="381.0" prefHeight="45.0" prefWidth="99.0" text="اسم القسم :" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txt_sectionID" alignment="CENTER" layoutX="69.0" layoutY="4.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="33.0" prefWidth="250.0">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </TextField>
+            <Label alignment="CENTER" layoutX="386.0" layoutY="56.0" prefHeight="45.0" prefWidth="92.0" text="رقم الجهاز :" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txt_deviceNumber" alignment="CENTER" layoutX="69.0" layoutY="60.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="33.0" prefWidth="250.0">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </TextField>
+            <Button layoutX="277.0" layoutY="469.0" mnemonicParsing="false" onAction="#addBtn" prefHeight="43.0" prefWidth="160.0" style="-fx-background-color: #39A2DB;" text="أضافة " textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@add-picture-icon-15.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="OPEN_HAND" />
+               </cursor>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </Button>
+            <Label alignment="CENTER" layoutX="381.0" layoutY="108.0" prefHeight="45.0" prefWidth="92.0" text="اسم الجهاز : " textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txt_deviceName" alignment="CENTER" layoutX="69.0" layoutY="112.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="33.0" prefWidth="250.0">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </TextField>
+            <Label alignment="CENTER" layoutX="411.0" layoutY="165.0" prefHeight="45.0" prefWidth="69.0" text="الغرفة :" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="387.0" layoutY="214.0" prefHeight="45.0" prefWidth="90.0" text="سعر الشراء :" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <TableView fx:id="receiptTable" layoutX="569.0" layoutY="58.0" nodeOrientation="RIGHT_TO_LEFT" onMouseClicked="#showDeviceToText" prefHeight="303.0" prefWidth="778.0" style="-fx-alignment: center;">
+              <columns>
+                  <TableColumn fx:id="col_id" prefWidth="75.0" style="-fx-alignment: center;" text="id" />
+                <TableColumn fx:id="col_section" prefWidth="75.0" style="-fx-alignment: center;" text="القسم " />
+                <TableColumn fx:id="col_deviceNumber" prefWidth="106.0" style="-fx-alignment: center;" text="رقم الجهاز" />
+                  <TableColumn fx:id="col_deviceName" prefWidth="106.0" style="-fx-alignment: center;" text="اسم الجهاز" />
+                  <TableColumn fx:id="txt_roomID" prefWidth="76.0" style="-fx-alignment: center;" text="الغرفة" />
+                  <TableColumn fx:id="col_devicePrice" prefWidth="112.0" style="-fx-alignment: center;" text="سعر الشراء " />
+                  <TableColumn fx:id="col_date" minWidth="0.0" prefWidth="0.0" text="التاريخ" />
+                  <TableColumn fx:id="col_note" prefWidth="351.0" text="الملاحظات" />
+              </columns>
+            </TableView>
+            <TextField fx:id="txt_roomId" alignment="CENTER" layoutX="69.0" layoutY="169.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="33.0" prefWidth="250.0">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="txt_price" alignment="CENTER" layoutX="69.0" layoutY="218.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="33.0" prefWidth="250.0">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </TextField>
+            <Label alignment="CENTER" layoutX="377.0" layoutY="339.0" prefHeight="45.0" prefWidth="107.0" text="ملاحظات :" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txt_notice" alignment="CENTER" layoutX="73.0" layoutY="340.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="37.0" prefWidth="243.0">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </TextField>
+            <Label alignment="CENTER" layoutX="913.0" layoutY="377.0" prefHeight="45.0" prefWidth="181.0" text="اجمالي تكلفة الاجهزة :" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="374.0" layoutY="277.0" prefHeight="45.0" prefWidth="107.0" text="تاريخ الشراء :" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <DatePicker fx:id="txt_buyDate" layoutX="71.0" layoutY="278.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="43.0" prefWidth="247.0" />
+            <Button layoutX="99.0" layoutY="469.0" mnemonicParsing="false" onAction="#edit" prefHeight="43.0" prefWidth="160.0" style="-fx-background-color: #FFC107;" text="تعديل" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="32.0" fitWidth="43.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@edit%20png%20icon.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="OPEN_HAND" />
+               </cursor>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </Button>
+            <Label fx:id="lbl_message" alignment="CENTER" contentDisplay="CENTER" layoutX="57.0" layoutY="386.0" onMouseClicked="#showDeviceToText" prefHeight="50.0" prefWidth="405.0" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="lbl_total" alignment="CENTER" layoutX="780.0" layoutY="377.0" prefHeight="45.0" prefWidth="144.0" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </bottom>
+</BorderPane>

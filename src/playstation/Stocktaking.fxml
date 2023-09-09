@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="674.0" prefWidth="965.0" style="-fx-background-color: #1A5F7A;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="playstation.StocktakingController">
+   <top>
+      <Pane prefHeight="45.0" prefWidth="553.0" style="-fx-background-color: #DDDDDD;" BorderPane.alignment="CENTER">
+         <children>
+            <Label alignment="CENTER" layoutX="347.0" layoutY="-10.0" prefHeight="65.0" prefWidth="160.0" text="جرد مخزن بكل الاصناف" textAlignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="39.0" fitWidth="41.0" layoutX="279.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@buy.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+   </top>
+   <bottom>
+      <AnchorPane prefHeight="0.0" prefWidth="756.0" BorderPane.alignment="CENTER" />
+   </bottom>
+   <left>
+      <Pane fx:id="radioSection" onDragDetected="#gettingTableInformationFromDataBase" onMouseClicked="#gettingTableInformationFromDataBase" prefHeight="655.0" prefWidth="965.0" BorderPane.alignment="CENTER">
+         <children>
+            <TableView fx:id="table_stocktaking" layoutX="50.0" layoutY="87.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="476.0" prefWidth="891.0" stylesheets="@styleSheetForTables.css">
+              <columns>
+                <TableColumn fx:id="col_itemCode" prefWidth="122.0" text="كود الصنف " />
+                <TableColumn fx:id="col_itemName" prefWidth="140.0" style="-fx-font: 17;" text="اسم الصنف " />
+                  <TableColumn fx:id="col_EnterNumber" minWidth="0.0" prefWidth="67.0" text="ق شراء" />
+                  <TableColumn fx:id="col_outNumber" minWidth="0.0" prefWidth="62.0" text="ق مباعة" />
+                  <TableColumn fx:id="col_remaining" minWidth="0.0" prefWidth="63.0" text="ق متبقي" />
+                  <TableColumn fx:id="col_buyPrice" minWidth="0.0" prefWidth="78.0" text="سعر الشراء" />
+                  <TableColumn fx:id="col_total" minWidth="0.0" prefWidth="147.0" text="حساب القطع المتبقية" />
+                  <TableColumn fx:id="col_section" minWidth="0.0" prefWidth="188.0" text="القسم" />
+              </columns>
+            </TableView>
+            <Label fx:id="lblSectionOrItems" layoutX="534.0" layoutY="22.0" prefHeight="42.0" prefWidth="137.0" text="الكود صنف او اسمه " textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txt_itemName_code" alignment="CENTER_RIGHT" layoutX="216.0" layoutY="19.0" onMouseClicked="#clearTable" prefHeight="47.0" prefWidth="292.0" />
+            <RadioButton fx:id="radioItme" layoutX="50.0" layoutY="22.0" mnemonicParsing="false" text="البحث بالاقسام" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </RadioButton>
+            <Label fx:id="lblSectionOrItems1" layoutX="214.0" layoutY="64.0" prefHeight="23.0" prefWidth="130.0" text="البحث يبتدي بعد الحرف 3" textFill="#02eb6f">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblSectionOrItems2" alignment="CENTER" contentDisplay="CENTER" layoutX="277.0" layoutY="573.0" prefHeight="42.0" prefWidth="206.0" text="اجمالي حساب القطع المتبقية : " textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="lbl_totalOfReminder" alignment="CENTER" contentDisplay="CENTER" layoutX="185.0" layoutY="573.0" prefHeight="42.0" prefWidth="92.0" text="0" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+   </left>
+</BorderPane>

@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="container" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="664.0" prefWidth="797.0" style="-fx-background-color: #1A5F7A;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="playstation.mainDataController">
+   <top>
+      <Pane prefHeight="64.0" prefWidth="600.0" style="-fx-background-color: #DDDDDD;" BorderPane.alignment="CENTER">
+         <children>
+            <Label alignment="CENTER" layoutX="280.0" prefHeight="65.0" prefWidth="160.0" text="البيانات الاساسية " textAlignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="53.0" fitWidth="82.0" layoutX="243.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@mainInstruction.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+   </top>
+   <center>
+      <AnchorPane prefHeight="608.0" prefWidth="731.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label alignment="CENTER" layoutX="506.0" layoutY="32.0" prefHeight="45.0" prefWidth="108.0" text="اسم الشركة  :" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txt_companyName" alignment="CENTER" layoutX="219.0" layoutY="41.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="33.0" prefWidth="250.0">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </TextField>
+            <Label alignment="CENTER" layoutX="534.0" layoutY="90.0" prefHeight="45.0" prefWidth="80.0" text="العنوان  :" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txt_address" alignment="CENTER" layoutX="219.0" layoutY="97.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="33.0" prefWidth="250.0">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </TextField>
+            <Label alignment="CENTER" layoutX="506.0" layoutY="140.0" prefHeight="45.0" prefWidth="108.0" text="رقم التليفون : " textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txt_telephone" alignment="CENTER" layoutX="219.0" layoutY="149.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="33.0" prefWidth="250.0">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </TextField>
+            <Label alignment="CENTER" layoutX="506.0" layoutY="192.0" prefHeight="45.0" prefWidth="108.0" text="رسالة الترحيب :" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txt_welcome" alignment="CENTER" layoutX="219.0" layoutY="201.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="33.0" prefWidth="250.0" text="لا يوجد ">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </TextField>
+            <Label alignment="CENTER" layoutX="506.0" layoutY="244.0" prefHeight="45.0" prefWidth="108.0" text="رسالة التذيل : " textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txt_tail" alignment="CENTER" layoutX="219.0" layoutY="253.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="33.0" prefWidth="250.0" text="لا يوجد ">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </TextField>
+            <Label alignment="CENTER" layoutX="550.0" layoutY="304.0" prefHeight="45.0" prefWidth="64.0" text="لوجو :" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txt_logoPath" alignment="CENTER" layoutX="219.0" layoutY="308.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="33.0" prefWidth="250.0" text="لا يوجد ">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </TextField>
+            <Label alignment="CENTER" layoutX="506.0" layoutY="411.0" prefHeight="45.0" prefWidth="108.0" text=" :instgram Link " textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txt_instaLink" alignment="CENTER" layoutX="219.0" layoutY="420.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="33.0" prefWidth="250.0" text="لا يوجد ">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </TextField>
+            <Label alignment="CENTER" layoutX="498.0" layoutY="359.0" prefHeight="45.0" prefWidth="125.0" text=" :facebook link  " textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txt_faceBookLink" alignment="CENTER" layoutX="219.0" layoutY="363.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="33.0" prefWidth="250.0" text="لا يوجد ">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </TextField>
+            <Button fx:id="btn_edit" layoutX="268.0" layoutY="511.0" mnemonicParsing="false" onAction="#addBtn" prefHeight="51.0" prefWidth="153.0" style="-fx-background-color: #FFC107;" text="تعديل" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="40.0" fitWidth="52.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@edit%20png%20icon.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Label fx:id="lbl_message" alignment="CENTER" contentDisplay="CENTER" layoutX="220.0" layoutY="467.0" prefHeight="37.0" prefWidth="253.0" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Button layoutX="89.0" layoutY="312.0" mnemonicParsing="false" onAction="#choosePathOfLogo" prefHeight="29.0" prefWidth="120.0" style="-fx-background-color: #FFC107;" text="اضافة صورة " textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="28.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@add-picture-icon-15.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Button>
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>

@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="555" pageHeight="802" columnWidth="555" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="1b453d5e-4b3b-4316-ad38-3b0ff584169f">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="period" class="java.lang.String"/>
+	<parameter name="forWho" class="java.lang.String"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT addMoney, detailsOfTransaction,dateOfTransaction ,son.name from lifeofcustomer JOIN son WHERE lifeofcustomer.customerAccountId = son.Id and transactionNumber = 556 and dateOfTransaction <= "2022-04-21" and dateOfTransaction >= "2021-03-2020"]]>
+	</queryString>
+	<field name="addMoney" class="java.lang.Float">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="detailsOfTransaction" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="dateOfTransaction" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="name" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<variable name="addMoney_1" class="java.lang.Float" calculation="Sum">
+		<variableExpression><![CDATA[$F{addMoney}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="96" splitType="Stretch">
+			<staticText>
+				<reportElement x="300" y="11" width="213" height="43" uuid="5a51173f-4a56-4b14-a15d-018d207d3a2b"/>
+				<textElement verticalAlignment="Middle">
+					<font size="22" isBold="true"/>
+				</textElement>
+				<text><![CDATA[تقرير بمصروفات خلال فترة]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="38" y="11" width="245" height="43" uuid="7ef44266-0788-47ef-a48b-a4a107e0ea28"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="18" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{period}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="38" y="54" width="475" height="42" uuid="71086d2b-f157-49a5-80d2-0cd55554960a"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="16" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{forWho}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="57" splitType="Stretch">
+			<staticText>
+				<reportElement x="388" y="21" width="164" height="20" uuid="3fb15e3d-e421-4489-bede-b8ab213a5aa8"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[اسم الحساب ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="258" y="21" width="42" height="20" uuid="bba2db3f-7ecc-4fbe-971a-217665c5b504"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[البيان]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="119" y="21" width="56" height="20" uuid="525836f2-f433-47b8-b04d-09797f101b51"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[المبلغ ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="21" width="100" height="20" uuid="2690ca14-9a96-4a0c-aeef-6e6602d940cc"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[التاريخ]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="30" splitType="Stretch">
+			<textField>
+				<reportElement x="388" y="0" width="164" height="20" uuid="bf6d9cb8-28d3-4dde-b64d-f2293ff6c77c"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="188" y="0" width="180" height="20" uuid="76839ba4-a13b-43de-a6a2-5bb319023fa5"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{detailsOfTransaction}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="119" y="0" width="56" height="20" uuid="b060763a-3d0f-4b51-825e-309fb8b33fc2"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{addMoney}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="25" y="0" width="44" height="20" uuid="ac4d8e6f-fcec-4f0a-b4c6-26f670d2f10f"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{dateOfTransaction}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="50">
+			<staticText>
+				<reportElement x="25" y="30" width="523" height="20" uuid="7c5287d1-e45c-4f26-8410-e8bb3f0fb661"/>
+				<textElement textAlignment="Right">
+					<font isBold="true" isItalic="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[programed by JONATHAN  software Comany 01095125678- 01205214283]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch">
+			<textField>
+				<reportElement x="-5" y="0" width="100" height="20" uuid="9e092107-93b9-4306-83d7-93f6ab5f8a0f"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$V{addMoney_1}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="95" y="0" width="125" height="20" uuid="4005977e-bd28-4bf6-9c59-8ee2bb615524"/>
+				<textElement>
+					<font size="15" isBold="true"/>
+				</textElement>
+				<text><![CDATA[اجمالي المصروفات  :]]></text>
+			</staticText>
+		</band>
+	</summary>
+</jasperReport>

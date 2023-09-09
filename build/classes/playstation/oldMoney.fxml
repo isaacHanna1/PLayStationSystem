@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="container" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="676.0" prefWidth="951.0" style="-fx-background-color: #1A5F7A;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="playstation.oldMoneyController">
+   <top>
+      <Pane prefHeight="45.0" prefWidth="553.0" style="-fx-background-color: #DDDDDD;" BorderPane.alignment="CENTER">
+         <children>
+            <Label alignment="CENTER" layoutX="361.0" layoutY="-10.0" prefHeight="65.0" prefWidth="202.0" text=" حساب عميل او مورد" textAlignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="39.0" fitWidth="41.0" layoutX="342.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@user-ic.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+   </top>
+   <bottom>
+      <AnchorPane prefHeight="611.0" prefWidth="941.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label alignment="CENTER" layoutX="500.0" layoutY="45.0" prefHeight="45.0" prefWidth="112.0" text="تاريخ البداية  :" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <Button layoutX="69.0" layoutY="441.0" mnemonicParsing="false" onAction="#getTransaction" prefHeight="41.0" prefWidth="112.0" style="-fx-background-color: #fff;" text="عرض">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="31.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@open.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="OPEN_HAND" />
+               </cursor>
+            </Button>
+            <Label alignment="CENTER" layoutX="199.0" layoutY="45.0" prefHeight="45.0" prefWidth="114.0" text="تاريخ النهاية : " textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="808.0" layoutY="45.0" prefHeight="45.0" prefWidth="112.0" text="اسم العميل :" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txt_playerName" alignment="CENTER" layoutX="621.0" layoutY="49.0" prefHeight="37.0" prefWidth="187.0">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </TextField>
+            <Label fx:id="lbl_deal" alignment="CENTER" layoutX="743.0" layoutY="416.0" prefHeight="45.0" prefWidth="168.0" text="اجمالي التعامل :" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <Label fx:id="lbl_totalOut" alignment="CENTER" layoutX="631.0" layoutY="416.0" prefHeight="45.0" prefWidth="112.0" text="0" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="lbl_PayOrGet" alignment="CENTER" layoutX="752.0" layoutY="461.0" prefHeight="45.0" prefWidth="150.0" text="اجمالي التحصيل:" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <Label fx:id="lbl_totalGet" alignment="CENTER" layoutX="631.0" layoutY="461.0" prefHeight="45.0" prefWidth="112.0" text="0" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="759.0" layoutY="504.0" prefHeight="45.0" prefWidth="112.0" text="المتبقي :" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <Label fx:id="lbl_totalReminder" alignment="CENTER" layoutX="631.0" layoutY="504.0" prefHeight="45.0" prefWidth="112.0" text="0" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="519.0" layoutY="451.0" prefHeight="45.0" prefWidth="112.0" text="النسبة :" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <Label fx:id="lbl_Ratio" alignment="CENTER" layoutX="414.0" layoutY="451.0" prefHeight="45.0" prefWidth="105.0" text="\%" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <DatePicker fx:id="datePickerStart" layoutX="325.0" layoutY="52.0" prefHeight="31.0" prefWidth="174.0" />
+            <DatePicker fx:id="datePickerEnd" layoutX="31.0" layoutY="52.0" prefHeight="31.0" prefWidth="174.0" />
+            <TableView fx:id="tableOfAllTransaction" layoutX="38.0" layoutY="144.0" nodeOrientation="RIGHT_TO_LEFT" onContextMenuRequested="#showPerviousReceipt" prefHeight="274.0" prefWidth="857.0" style="-fx-font-size: 15px; -fx-alignment: center;">
+              <columns>
+                  <TableColumn fx:id="col_trancationDate" prefWidth="145.0" text="التاريخ" />
+                  <TableColumn fx:id="col_transactionNumber" prefWidth="16.0" style="-fx-text-fill: white;" text="الحركة" />
+                  <TableColumn fx:id="col_transactionDetails" prefWidth="346.0" style="-fx-alignment: center;" text="وصف العملية " />
+                  <TableColumn fx:id="col_addMoney" prefWidth="83.0" style="-fx-alignment: center;" text="دائن" />
+                  <TableColumn fx:id="col_minsMoney" prefWidth="78.0" style="-fx-alignment: center;" text="مدين" />
+                  <TableColumn fx:id="col_finalPriceAfterTransaction" prefWidth="119.0" style="-fx-alignment: center;" text="الرصيد" />
+                  <TableColumn fx:id="col_transcationType" prefWidth="68.0" style="-fx-text-fill: white;" text="العملية" />
+              </columns>
+            </TableView>
+            <Label fx:id="lbl_Ratio1" alignment="CENTER" layoutX="370.0" layoutY="451.0" prefHeight="45.0" prefWidth="44.0" text="\%" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <Button layoutX="204.0" layoutY="560.0" mnemonicParsing="false" onAction="#allCustomerMoney" prefHeight="45.0" prefWidth="182.0" style="-fx-background-color: #47B5FF;" text="عرض  كل مديونات العملاء" textFill="WHITE" AnchorPane.topAnchor="560.0">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="27.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@manager-4-256.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="OPEN_HAND" />
+               </cursor>
+               <effect>
+                  <DropShadow />
+               </effect></Button>
+            <Button layoutX="13.0" layoutY="559.0" mnemonicParsing="false" onAction="#allSupplierMoney" prefHeight="46.0" prefWidth="185.0" style="-fx-background-color: #47B5FF;" text="عرض كل مديونات الموردين " textFill="WHITE" textOverrun="CLIP">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="32.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@suppliers.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="OPEN_HAND" />
+               </cursor>
+               <effect>
+                  <DropShadow />
+               </effect></Button>
+         </children>
+      </AnchorPane>
+   </bottom>
+</BorderPane>

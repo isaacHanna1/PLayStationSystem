@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="514.0" prefWidth="1071.0" style="-fx-background-color: #1A5F7A;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="playstation.cafeItemController">
+   <top>
+      <Pane onMouseClicked="#gettingAllCafeItem" prefHeight="45.0" prefWidth="553.0" style="-fx-background-color: #DDDDDD;" BorderPane.alignment="CENTER">
+         <children>
+            <Label alignment="CENTER" layoutX="471.0" layoutY="-10.0" prefHeight="65.0" prefWidth="130.0" text="الاصناف " textAlignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="39.0" fitWidth="41.0" layoutX="471.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@cafe.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="14.0" layoutY="9.0" prefHeight="28.0" prefWidth="344.0" text="يفضل عند تسجيل صنف ليس له بار كود ان تضيف كود يبدا 1001" />
+         </children>
+      </Pane>
+   </top>
+   <bottom>
+      <AnchorPane onMouseClicked="#gettingAllCafeItem" prefHeight="455.0" prefWidth="1106.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label alignment="CENTER" layoutX="331.0" layoutY="-8.0" prefHeight="45.0" prefWidth="97.0" text="كود الصنف :" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txt_code" alignment="CENTER" layoutX="42.0" layoutY="-4.0" prefHeight="33.0" prefWidth="250.0">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </TextField>
+            <Button layoutX="158.0" layoutY="396.0" mnemonicParsing="false" onAction="#addnewItem" prefHeight="43.0" prefWidth="114.0" style="-fx-background-color: #39A2DB;" text="أضافة " textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="32.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@add-picture-icon-15.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="OPEN_HAND" />
+               </cursor>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </Button>
+            <Button layoutX="14.0" layoutY="397.0" mnemonicParsing="false" onAction="#edit" prefHeight="41.0" prefWidth="112.0" style="-fx-background-color: #FFC107;" text="تعديل" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="28.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@edit%20png%20icon.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="OPEN_HAND" />
+               </cursor>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </Button>
+            <Label alignment="CENTER" layoutX="331.0" layoutY="104.0" prefHeight="45.0" prefWidth="97.0" text="اسم الصنف :" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txt_itemName" alignment="CENTER" layoutX="42.0" layoutY="108.0" prefHeight="33.0" prefWidth="250.0">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </TextField>
+            <Label alignment="CENTER" layoutX="331.0" layoutY="157.0" prefHeight="45.0" prefWidth="97.0" text="سعر الشراء : " textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txt_itemBuy" alignment="CENTER" layoutX="42.0" layoutY="161.0" prefHeight="33.0" prefWidth="250.0">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </TextField>
+            <Label alignment="CENTER" layoutX="331.0" layoutY="216.0" prefHeight="45.0" prefWidth="97.0" text="سعر البيع : " textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txt_itemPrice" alignment="CENTER" layoutX="42.0" layoutY="220.0" prefHeight="33.0" prefWidth="250.0">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </TextField>
+            <Label alignment="CENTER" layoutX="356.0" layoutY="51.0" onMouseClicked="#gettingAllCafeItem" prefHeight="45.0" prefWidth="71.0" text="القسم : " textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txt_section_id" alignment="CENTER" layoutX="42.0" layoutY="55.0" prefHeight="33.0" prefWidth="250.0">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </TextField>
+            <Label fx:id="lbl_message" alignment="CENTER" contentDisplay="CENTER" layoutY="332.0" prefHeight="35.0" prefWidth="425.0" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="307.0" layoutY="275.0" prefHeight="45.0" prefWidth="121.0" text="التنبية عند رقم : " textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txt_notificationNumber" alignment="CENTER" layoutX="42.0" layoutY="279.0" prefHeight="33.0" prefWidth="250.0">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </TextField>
+            <TableView fx:id="table_item" layoutX="443.0" layoutY="8.0" nodeOrientation="RIGHT_TO_LEFT" onMouseClicked="#select" prefHeight="388.0" prefWidth="543.0">
+              <columns>
+                <TableColumn fx:id="col_id" prefWidth="29.0" text="م" />
+                <TableColumn fx:id="col_code" prefWidth="94.0" text="كود الصنف" />
+                  <TableColumn fx:id="col_name" prefWidth="128.0" text="اسم الصنف" />
+                  <TableColumn fx:id="col_sectionName" prefWidth="63.0" text="القسم" />
+                  <TableColumn fx:id="col_buy" prefWidth="78.0" text="سعر الشراء" />
+                  <TableColumn fx:id="col_price" prefWidth="93.0" text="سعر البيع " />
+                  <TableColumn fx:id="col_notification" prefWidth="49.0" text="التنبيه عند رقم" />
+              </columns>
+            </TableView>
+         </children>
+      </AnchorPane>
+   </bottom>
+</BorderPane>

@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="container" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="590.0" prefWidth="1182.0" style="-fx-background-color: #1A5F7A;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="playstation.receivingMoneyFromController">
+   <top>
+      <Pane prefHeight="45.0" prefWidth="553.0" style="-fx-background-color: #DDDDDD;" BorderPane.alignment="CENTER">
+         <children>
+            <Label alignment="CENTER" layoutX="521.0" layoutY="-1.0" prefHeight="65.0" prefWidth="160.0" text="استلام نقدية " textAlignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="39.0" fitWidth="41.0" layoutX="502.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@safe.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+   </top>
+   <bottom>
+      <AnchorPane onMouseClicked="#getALLmoney" prefHeight="549.0" prefWidth="913.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button layoutX="759.0" layoutY="319.0" mnemonicParsing="false" onAction="#handleReceiveBtn" prefHeight="43.0" prefWidth="114.0" style="-fx-background-color: #39A2DB;" text="استلام " textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="25.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@accounts.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="OPEN_HAND" />
+               </cursor>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </Button>
+            <Button fx:id="delete_btn" layoutX="637.0" layoutY="318.0" mnemonicParsing="false" onAction="#deleteMoney" prefHeight="44.0" prefWidth="112.0" style="-fx-background-color: #DA0037;" text="مسح" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@delete.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="OPEN_HAND" />
+               </cursor>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </Button>
+            <ComboBox fx:id="combo_account_safe" layoutX="677.0" layoutY="95.0" prefHeight="40.0" prefWidth="185.0" />
+            <Label layoutX="755.0" layoutY="158.0" prefHeight="31.0" prefWidth="73.0" text="الي خزينة : " textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <ComboBox fx:id="combo_safe" layoutX="613.0" layoutY="154.0" prefHeight="40.0" prefWidth="142.0" />
+            <TextField fx:id="txt_receivingTotalMoney" alignment="CENTER" layoutX="838.0" layoutY="153.0" prefHeight="41.0" prefWidth="109.0">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font></TextField>
+            <DatePicker fx:id="datePicker" layoutX="854.0" layoutY="50.0" prefHeight="25.0" prefWidth="179.0" />
+            <Label layoutX="1054.0" layoutY="47.0" prefHeight="31.0" prefWidth="98.0" text="تاريخ الاستلام " textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txt_details" alignment="CENTER" layoutX="579.0" layoutY="224.0" prefHeight="43.0" prefWidth="492.0" text="سداد الي الخزينة">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </TextField>
+            <Label layoutX="1091.0" layoutY="230.0" prefHeight="31.0" prefWidth="55.0" text="البيان :" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="lbl_message" alignment="CENTER" contentDisplay="CENTER" layoutX="873.0" layoutY="275.0" prefHeight="43.0" prefWidth="260.0" text="النتيجة " textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="1042.0" layoutY="158.0" prefHeight="31.0" prefWidth="98.0" text="الحساب الحالي :" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="lbl_currenctBallance" alignment="CENTER" contentDisplay="CENTER" layoutX="954.0" layoutY="158.0" prefHeight="31.0" prefWidth="98.0" text="0" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <TableView fx:id="table_safe" layoutY="37.0" nodeOrientation="RIGHT_TO_LEFT" onMouseClicked="#getSelectedItem" prefHeight="402.0" prefWidth="577.0">
+              <columns>
+                <TableColumn fx:id="col_id" minWidth="0.0" prefWidth="68.0" text="id" />
+                  <TableColumn fx:id="col_date" prefWidth="82.0" text="التاريخ" />
+                <TableColumn fx:id="colDetails" minWidth="0.0" prefWidth="245.0" text="البيان " />
+                  <TableColumn fx:id="col_money" prefWidth="74.0" text="المبلغ" />
+              </columns>
+            </TableView>
+            <DatePicker fx:id="datePickerSearch" layoutX="212.0" layoutY="454.0" prefHeight="36.0" prefWidth="184.0" />
+            <Button fx:id="showBtn" layoutX="79.0" layoutY="452.0" mnemonicParsing="false" onAction="#getMonenyInSpecificDate" prefHeight="39.0" prefWidth="112.0" text="عرض">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+            <HBox layoutX="903.0" layoutY="100.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="36.0" prefWidth="251.0" style="-fx-border-color: #ffffff;">
+               <children>
+                  <RadioButton fx:id="radioAccountName" alignment="CENTER_LEFT" mnemonicParsing="false" nodeOrientation="RIGHT_TO_LEFT" onAction="#ifAccountRadioISSelected" text="اسم الحساب " textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </RadioButton>
+                  <Label prefHeight="26.0" prefWidth="19.0" />
+                  <RadioButton fx:id="radioSafeName" alignment="CENTER_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false" nodeOrientation="RIGHT_TO_LEFT" onAction="#ifSafetRadioISSelected" prefHeight="21.0" prefWidth="96.0" text="اسم الخزينة " textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </RadioButton>
+               </children>
+            </HBox>
+         </children>
+      </AnchorPane>
+   </bottom>
+</BorderPane>

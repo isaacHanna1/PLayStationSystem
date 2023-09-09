@@ -1,0 +1,35 @@
+.btn {
+  -fx-background-color: #3498db;
+  -fx-text-fill: white;
+  -fx-font-size: 14px;
+  -fx-font-weight: bold;
+  -fx-padding: 10px 20px;
+  -fx-border-color: #2980b9;
+  -fx-border-width: 2px;
+  -fx-border-radius: 5px;
+  -fx-cursor: hand; /* Change cursor on hover */
+  -fx-pref-width: 150px;
+  -fx-alignment:center;
+}
+.btnItem {
+ -fx-background-color:#3498db;
+  -fx-text-fill: white;
+  -fx-font-size: 14px;
+  -fx-font-weight: bold;
+  -fx-padding: 10px 20px;
+  -fx-border-color: #3498db;
+  -fx-border-width: 2px;
+  -fx-border-radius: 5px;
+  -fx-cursor: hand; /* Change cursor on hover */
+  -fx-alignment:center;
+}
+
+.btn:hover {
+  -fx-background-color: #2980b9;
+}
+.btnItem:hover {
+  -fx-background-color: #2980b9;
+}
+.vbContainer {
+  -fx-space: 10px;
+}

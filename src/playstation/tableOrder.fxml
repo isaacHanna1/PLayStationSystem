@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="611.0" prefWidth="1316.0" style="-fx-background-color: #1A5F7A;" stylesheets="@style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="playstation.TableOrderController">
+   <children>
+      <Pane layoutX="43.0" layoutY="94.0" prefHeight="445.0" prefWidth="678.0">
+         <children>
+            <Pane fx:id="paneOrder" layoutX="-41.0" layoutY="14.0" prefHeight="446.0" prefWidth="747.0">
+               <children>
+                  <TableView fx:id="tabel_receipt" editable="true" layoutX="140.0" layoutY="73.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="182.0" prefWidth="567.0" tableMenuButtonVisible="true">
+                     <columns>
+                        <TableColumn fx:id="col_id" prefWidth="75.0" text="id" />
+                        <TableColumn fx:id="col_codeItem" prefWidth="75.0" text="الكود " />
+                        <TableColumn fx:id="col_itemName" prefWidth="75.0" text="اسم الصنف " />
+                        <TableColumn fx:id="col_itemQuantity" prefWidth="75.0" text="الكمية" />
+                        <TableColumn fx:id="col_payPrice" prefWidth="75.0" text="سعر البيع " />
+                        <TableColumn fx:id="col_total" prefWidth="67.0" text="الاجمالي " />
+                        <TableColumn fx:id="col_repository" prefWidth="83.0" text="المخزن" />
+                        <TableColumn fx:id="col_saved" prefWidth="83.0" text="حفظت ؟" />
+                     </columns>
+                  </TableView>
+                  <TextField fx:id="txt_codeItem" alignment="CENTER" layoutX="476.0" layoutY="32.0" prefHeight="35.0" prefWidth="229.0" promptText="كود الصنف - اسم الصنف ">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </TextField>
+                  <RadioButton fx:id="radioName" layoutX="649.0" layoutY="6.0" mnemonicParsing="false" onAction="#radioNameSelected" prefHeight="17.0" prefWidth="56.0" text="بالاسم " textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </RadioButton>
+                  <Label fx:id="lbl_total" alignment="CENTER" layoutX="533.0" layoutY="259.0" prefHeight="20.0" prefWidth="79.0" text="الاجمالي :" textAlignment="CENTER" textFill="#2dff05">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <ComboBox fx:id="combo_repositorty" layoutX="265.0" layoutY="36.0" prefHeight="27.0" prefWidth="141.0" />
+                  <TextField fx:id="txt_quntity" alignment="CENTER" layoutX="420.0" layoutY="35.0" prefHeight="25.0" prefWidth="53.0" promptText="الكمية" text="1">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </TextField>
+                  <Label fx:id="lbl_reciptNumber" alignment="CENTER" layoutX="167.0" layoutY="40.0" prefHeight="23.0" prefWidth="111.0" text="0" textFill="WHITE" />
+                  <Button layoutX="4.0" layoutY="77.0" mnemonicParsing="false" onAction="#deleteItem" prefHeight="39.0" prefWidth="131.0" style="-fx-background-color: #DA0037;" text="مسح صنف" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="OPEN_HAND" />
+                     </cursor>
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                     <graphic>
+                        <ImageView fitHeight="27.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@delete.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Label alignment="CENTER" layoutX="145.0" layoutY="259.0" prefHeight="21.0" prefWidth="267.0" text="لاحظ انه لن يتم  الحفظ الا بالضغط علي زر ENTER" textFill="#f3ff06" />
+                  <Label fx:id="lbl_total1" alignment="CENTER" layoutX="628.0" layoutY="259.0" prefHeight="25.0" prefWidth="79.0" text="الاجمالي :" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Button layoutX="4.0" layoutY="234.0" mnemonicParsing="false" onAction="#finishPayment" prefHeight="39.0" prefWidth="131.0" style="-fx-background-color: #FFDB89;" text="انهاء الحساب ">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="23.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@payMoney.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button layoutX="4.0" layoutY="128.0" mnemonicParsing="false" onAction="#openReceiveMoney" prefHeight="39.0" prefWidth="131.0" style="-fx-background-color: #FFF6C3;" text="استلام نقدية">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="23.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@accounts.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Pane fx:id="paymentPane" layoutX="21.0" layoutY="288.0" prefHeight="114.0" prefWidth="700.0">
+                     <children>
+                        <TextField fx:id="txt_payed" alignment="CENTER" layoutX="430.0" layoutY="12.0" prefHeight="71.0" prefWidth="68.0" promptText="المدفوع">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="txt_reminder" alignment="CENTER" editable="false" layoutX="350.0" layoutY="12.0" prefHeight="71.0" prefWidth="68.0" promptText="المتبقي" style="-fx-border-color: #ff1303;">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </TextField>
+                        <Label fx:id="lbl_total11" alignment="CENTER" layoutX="588.0" layoutY="13.0" prefHeight="25.0" prefWidth="68.0" text="تم دفع:" textAlignment="CENTER" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txt_downPayment" alignment="CENTER" layoutX="520.0" layoutY="10.0" prefHeight="25.0" prefWidth="68.0" promptText="0">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </TextField>
+                        <Label fx:id="lbl_total111" alignment="CENTER" layoutX="594.0" layoutY="56.0" prefHeight="25.0" prefWidth="100.0" text="مستحق الدفع :" textAlignment="CENTER" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txt_mustPayed" alignment="CENTER" layoutX="520.0" layoutY="53.0" prefHeight="23.0" prefWidth="68.0" promptText="0">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </TextField>
+                        <Button fx:id="btnSaveAndChangeState" layoutX="205.0" layoutY="12.0" mnemonicParsing="false" onAction="#printAndChangeStateOfTable" prefHeight="71.0" prefWidth="131.0" style="-fx-background-color: #FFC107;" text="حفظ وطباعة" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fitHeight="31.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@print.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <cursor>
+                              <Cursor fx:constant="OPEN_HAND" />
+                           </cursor>
+                           <effect>
+                              <DropShadow />
+                           </effect>
+                        </Button>
+                        <Label alignment="CENTER" layoutX="14.0" layoutY="79.0" prefHeight="21.0" prefWidth="56.0" text="للدفع f12" textFill="#f3ff06" />
+                     </children>
+                  </Pane>
+                  <Button layoutX="4.0" layoutY="184.0" mnemonicParsing="false" onAction="#openLiveBill" prefHeight="39.0" prefWidth="131.0" style="-fx-background-color: #f2be22;" text="فاتورة مباشرة " textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="23.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@left-arrow-8-458424.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+      <ImageView fitHeight="100.0" fitWidth="111.0" layoutX="318.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@table.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="682.0" layoutY="30.0" text="العميل:" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txt_customer_name" alignment="CENTER" layoutX="446.0" layoutY="25.0" prefHeight="25.0" prefWidth="229.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
+      <ScrollPane layoutX="1124.0" layoutY="-3.0" prefHeight="611.0" prefWidth="186.0">
+         <content>
+            <VBox fx:id="sectionVB" alignment="TOP_CENTER" prefHeight="596.0" prefWidth="185.0" spacing="10.0">
+               <opaqueInsets>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </opaqueInsets>
+            </VBox>
+         </content>
+      </ScrollPane>
+      <ScrollPane layoutX="730.0" layoutY="-3.0" prefHeight="611.0" prefWidth="382.0">
+         <content>
+            <FlowPane fx:id="itemPane" alignment="TOP_RIGHT" columnHalignment="RIGHT" hgap="10.0" prefHeight="606.0" prefWidth="380.0" vgap="10.0">
+               <opaqueInsets>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </opaqueInsets>
+            </FlowPane>
+         </content>
+      </ScrollPane>
+   </children>
+</AnchorPane>

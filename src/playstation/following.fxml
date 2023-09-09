@@ -1,0 +1,501 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="container" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="684.0" prefWidth="1054.0" style="-fx-background-color: #1A5F7A;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="playstation.followingController">
+   <top>
+      <Pane prefHeight="45.0" prefWidth="553.0" style="-fx-background-color: #DDDDDD;" BorderPane.alignment="CENTER">
+         <children>
+            <Label alignment="CENTER" layoutX="547.0" layoutY="-3.0" prefHeight="51.0" prefWidth="104.0" text="متابعة " textAlignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="39.0" fitWidth="41.0" layoutX="527.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@following.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+   </top>
+   <center>
+      <AnchorPane prefHeight="650.0" prefWidth="1055.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label fx:id="lbl_palyerName" alignment="BOTTOM_CENTER" layoutX="248.0" prefHeight="59.0" prefWidth="242.0" style="-fx-background-color: #FFC900;" text="اسم لاعب " textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txt_startTime" alignment="CENTER" disable="true" layoutX="600.0" layoutY="127.0" prefHeight="37.0" prefWidth="247.0">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </TextField>
+            <Button fx:id="startBtn" layoutX="830.0" layoutY="581.0" mnemonicParsing="false" onAction="#startNewTime" prefHeight="48.0" prefWidth="206.0" style="-fx-background-color: #F24A72;" text="بدء التشغيل" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="36.0" fitWidth="67.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@startTime.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="OPEN_HAND" />
+               </cursor>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </Button>
+            <Button fx:id="btnSaveAndChangeState" layoutX="591.0" layoutY="581.0" mnemonicParsing="false" onAction="#changeState" prefHeight="48.0" prefWidth="197.0" style="-fx-background-color: #FFC107;" text="حفظ وطباعة" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="36.0" fitWidth="91.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@print.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="OPEN_HAND" />
+               </cursor>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </Button>
+            <Label alignment="CENTER" layoutX="909.0" layoutY="127.0" prefHeight="45.0" prefWidth="97.0" text="وقت البداية : " textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txt_endTime" alignment="CENTER" disable="true" layoutX="600.0" layoutY="183.0" prefHeight="37.0" prefWidth="248.0">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </TextField>
+            <Label fx:id="lbl_roomName" alignment="BOTTOM_CENTER" layoutX="458.0" prefHeight="59.0" prefWidth="239.0" style="-fx-background-color: #FFC900;" text="الغرفة " textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <Label fx:id="lbl_sectionName" alignment="BOTTOM_CENTER" layoutX="689.0" prefHeight="59.0" prefWidth="243.0" style="-fx-background-color: #FFC900;" text="القسم" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <Label fx:id="lbl_deviceBumber" alignment="BOTTOM_CENTER" layoutX="920.0" prefHeight="59.0" prefWidth="135.0" style="-fx-background-color: #FFC900;" text="رقم الجهاز " textAlignment="CENTER" textFill="#250303">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="902.0" layoutY="180.0" prefHeight="45.0" prefWidth="111.0" text="وقت النهاية : " textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <ToolBar fx:id="groupOFButton" layoutX="249.0" layoutY="69.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="49.0" prefWidth="801.0">
+               <items>
+                  <Button mnemonicParsing="false" onAction="#open" prefHeight="37.0" prefWidth="27.0" text="?">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="OPEN_HAND" />
+                     </cursor>
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#addHourToCurrentTime" prefHeight="37.0" prefWidth="42.0" text="60">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="OPEN_HAND" />
+                     </cursor>
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#addHalfToCurrentTime" prefHeight="34.0" prefWidth="38.0" text="30">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="OPEN_HAND" />
+                     </cursor>
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#addThirdToCurrentTime" prefHeight="37.0" prefWidth="38.0" text="20">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="OPEN_HAND" />
+                     </cursor>
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#addQuartarToCurrentTime" prefHeight="39.0" prefWidth="41.0" text="15">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="OPEN_HAND" />
+                     </cursor>
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#add5MinitsToCurrentTime" prefHeight="39.0" prefWidth="41.0" text="5">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="OPEN_HAND" />
+                     </cursor>
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </Button>
+               </items>
+            </ToolBar>
+            <ToolBar fx:id="buttonscontroll" layoutX="540.0" layoutY="291.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="57.0" prefWidth="508.0">
+               <items>
+                  <Button mnemonicParsing="false" onAction="#FinishTime" prefHeight="45.0" prefWidth="143.0" text="انهاء الوقت ">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@stop-watch.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="OPEN_HAND" />
+                     </cursor>
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#changeSingleToMulti" prefHeight="42.0" prefWidth="158.0" text="single /multi">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="40.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@convert.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="OPEN_HAND" />
+                     </cursor>
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </Button>
+                  <Button alignment="CENTER" contentDisplay="RIGHT" mnemonicParsing="false" nodeOrientation="RIGHT_TO_LEFT" onAction="#openReceiveMoney" prefHeight="43.0" prefWidth="148.0" text="استلام النقدية ">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="33.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@wallet.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="OPEN_HAND" />
+                     </cursor>
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </Button>
+               </items>
+            </ToolBar>
+            <ComboBox fx:id="combo_prices" layoutX="652.0" layoutY="236.0" prefHeight="36.0" prefWidth="195.0" />
+            <Label alignment="CENTER" layoutX="860.0" layoutY="232.0" prefHeight="45.0" prefWidth="147.0" text="تحديد نظام التسعير :" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <Pane fx:id="payPane" layoutX="529.0" layoutY="356.0" prefHeight="209.0" prefWidth="516.0">
+               <children>
+                  <Label alignment="CENTER" layoutX="387.0" layoutY="79.0" prefHeight="19.0" prefWidth="111.0" text="الاجمالي :" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="txt_order_andDevice" alignment="CENTER" disable="true" layoutX="271.0" layoutY="74.0" prefHeight="37.0" prefWidth="109.0" text="0">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </TextField>
+                  <Label alignment="CENTER" layoutX="166.0" layoutY="128.0" prefHeight="25.0" prefWidth="65.0" text="المدفوع :" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="txt_payed" alignment="CENTER" layoutX="12.0" layoutY="122.0" onAction="#FinishTime" onKeyReleased="#finalPrice" prefHeight="37.0" prefWidth="109.0" text="0">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </TextField>
+                  <Label alignment="CENTER" layoutX="272.0" layoutY="171.0" onDragDetected="#finalPrice" prefHeight="19.0" prefWidth="111.0" text="المتبقي : " textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="txt_reminder" alignment="CENTER" layoutX="160.0" layoutY="166.0" onAction="#finalPrice" onMouseClicked="#finalPrice" onMouseEntered="#finalPrice" prefHeight="37.0" prefWidth="109.0" text="0">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </TextField>
+                  <Label alignment="CENTER" layoutX="394.0" layoutY="32.0" prefHeight="19.0" prefWidth="111.0" text="حساب الجهاز :" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="txt_devicePrice" alignment="CENTER" disable="true" layoutX="271.0" layoutY="26.0" prefHeight="37.0" prefWidth="109.0" text="0">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </TextField>
+                  <Label alignment="CENTER" layoutX="135.0" layoutY="32.0" prefHeight="19.0" prefWidth="111.0" text="حساب الطلبات :" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="txt_order" alignment="CENTER" disable="true" layoutX="12.0" layoutY="26.0" prefHeight="37.0" prefWidth="109.0" text="0">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </TextField>
+                  <Label alignment="CENTER" layoutX="167.0" layoutY="80.0" prefHeight="25.0" prefWidth="65.0" text="تم دفع :" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="txt_payedBefor" alignment="CENTER" editable="false" layoutX="13.0" layoutY="74.0" onAction="#FinishTime" onKeyReleased="#finalPrice" prefHeight="37.0" prefWidth="109.0" text="0">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </TextField>
+                  <Label alignment="CENTER" layoutX="382.0" layoutY="128.0" prefHeight="25.0" prefWidth="128.0" text="المستحق للدفع :" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="txt_mustpayed" alignment="CENTER" editable="false" layoutX="271.0" layoutY="122.0" onAction="#FinishTime" onKeyReleased="#finalPrice" prefHeight="37.0" prefWidth="109.0" text="0">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </TextField>
+               </children>
+            </Pane>
+            <Label alignment="CENTER" layoutX="918.0" layoutY="4.0" prefHeight="17.0" prefWidth="140.0" text="اسم الجهاز">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="741.0" layoutY="2.0" prefHeight="17.0" prefWidth="140.0" text="القسم ">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="509.0" layoutY="2.0" prefHeight="17.0" prefWidth="140.0" text="الغرفة">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="303.0" layoutY="2.0" prefHeight="17.0" prefWidth="140.0" text="اسم لاعب ">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
+            <Button fx:id="btn_startChange" layoutX="514.0" layoutY="234.0" mnemonicParsing="false" onAction="#startTimeAfterChangeState" prefHeight="40.0" prefWidth="92.0" text="بدء ">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@startConvert.ico" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="OPEN_HAND" />
+               </cursor>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </Button>
+            <TextArea fx:id="txt_fieldALLINfo" layoutX="25.0" layoutY="18.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="200.0" prefWidth="174.0" text="التفاصيل&#10;" />
+            <Pane layoutX="-5.0" layoutY="236.0" prefHeight="398.0" prefWidth="522.0">
+               <children>
+                  <Pane prefHeight="44.0" prefWidth="70.0">
+                     <children>
+                        <Button fx:id="buttonAddOrder" mnemonicParsing="false" onAction="#showPaneOreder" prefHeight="37.0" prefWidth="64.0" text="+">
+                           <graphic>
+                              <ImageView fitHeight="26.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@buy.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="OPEN_HAND" />
+                           </cursor>
+                           <effect>
+                              <DropShadow />
+                           </effect>
+                        </Button>
+                     </children>
+                  </Pane>
+                  <Pane fx:id="paneOrder" layoutY="43.0" prefHeight="307.0" prefWidth="534.0">
+                     <children>
+                        <TableView fx:id="tabel_receipt" layoutX="15.0" layoutY="114.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="184.0" prefWidth="518.0">
+                          <columns>
+                            <TableColumn fx:id="col_codeItem" prefWidth="75.0" text="الكود " />
+                            <TableColumn fx:id="col_itemName" prefWidth="75.0" text="اسم الصنف " />
+                              <TableColumn fx:id="col_itemQuantity" prefWidth="75.0" text="الكمية" />
+                              <TableColumn fx:id="col_payPrice" prefWidth="75.0" text="سعر البيع " />
+                              <TableColumn fx:id="col_total" prefWidth="67.0" text="الاجمالي " />
+                              <TableColumn fx:id="col_repository" prefWidth="83.0" text="المخزن" />
+                              <TableColumn fx:id="col_saved" prefWidth="83.0" text="حفظت ؟" />
+                          </columns>
+                        </TableView>
+                        <TextField fx:id="txt_codeItem" alignment="CENTER" layoutX="219.0" layoutY="64.0" prefHeight="35.0" prefWidth="229.0" promptText="كود الصنف - اسم الصنف ">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </TextField>
+                        <RadioButton fx:id="radioName" layoutX="380.0" layoutY="39.0" mnemonicParsing="false" onAction="#radioNameSelected" prefHeight="17.0" prefWidth="56.0" text="بالاسم " textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </RadioButton>
+                        <Label fx:id="lbl_total" alignment="CENTER" layoutX="34.0" layoutY="303.0" prefHeight="19.0" prefWidth="111.0" text="الاجمالي :" textAlignment="CENTER" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Button layoutX="283.0" layoutY="305.0" mnemonicParsing="false" onAction="#saveButton" prefHeight="24.0" prefWidth="72.0" text="&lt;-">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="OPEN_HAND" />
+                           </cursor>
+                           <effect>
+                              <DropShadow />
+                           </effect>
+                        </Button>
+                        <ComboBox fx:id="combo_repositorty" layoutX="23.0" layoutY="68.0" prefHeight="27.0" prefWidth="118.0" />
+                        <TextField fx:id="txt_quntity" alignment="CENTER" layoutX="155.0" layoutY="67.0" prefHeight="25.0" prefWidth="53.0" promptText="الكمية" text="1">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </TextField>
+                        <Label fx:id="lbl_reciptNumber" alignment="CENTER" layoutX="34.0" layoutY="45.0" prefHeight="23.0" prefWidth="111.0" text="0" textFill="WHITE" />
+                        <Button layoutX="374.0" layoutY="303.0" mnemonicParsing="false" onAction="#deleteItem" prefHeight="16.0" prefWidth="67.0" style="-fx-background-color: #DA0037;" text="مسح" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="OPEN_HAND" />
+                           </cursor>
+                           <effect>
+                              <DropShadow />
+                           </effect>
+                        </Button>
+                        <Label alignment="CENTER" layoutX="12.0" layoutY="332.0" prefHeight="21.0" prefWidth="267.0" text="لاحظ انه لن يتم  الحفظ الا بالضغط علي زر ENTER" textFill="#f3ff06" />
+                     </children>
+                  </Pane>
+               </children>
+            </Pane>
+            <Pane fx:id="controlTimePane" layoutX="258.0" layoutY="136.0" prefHeight="60.0" prefWidth="305.0">
+               <children>
+                  <Button fx:id="btn_editTime" layoutX="31.0" layoutY="11.0" mnemonicParsing="false" onAction="#editTime" prefHeight="35.0" prefWidth="141.0" text="تعديل الوقت">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@editTime.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="OPEN_HAND" />
+                     </cursor>
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </Button>
+                  <Button layoutX="182.0" layoutY="12.0" mnemonicParsing="false" onAction="#cleartxtEnd" prefHeight="24.0" prefWidth="127.0" text="اعادة ضبط">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@reset.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="OPEN_HAND" />
+                     </cursor>
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </Button>
+               </children>
+            </Pane>
+            <ImageView fx:id="settingIcon" fitHeight="35.0" fitWidth="35.0" layoutX="556.0" layoutY="149.0" onMouseClicked="#showTimeCOntrolPane" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@setting.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="OPEN_HAND" />
+               </cursor>
+            </ImageView>
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="590.0" prefWidth="826.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="playstation.barCodeController">
+   <children>
+      <Pane layoutY="-3.0" prefHeight="590.0" prefWidth="826.0">
+         <children>
+            <Label alignment="CENTER" layoutX="302.0" layoutY="14.0" prefHeight="42.0" prefWidth="160.0" text="طباعة الباركود " textAlignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="648.0" layoutY="68.0" prefHeight="27.0" prefWidth="110.0" text="اسم الصنف : ">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="648.0" layoutY="155.0" prefHeight="27.0" prefWidth="110.0" text="الكمية : ">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txt_itemName" alignment="CENTER" layoutX="382.0" layoutY="69.0" prefHeight="25.0" prefWidth="258.0" />
+            <TextField fx:id="txt_quantity" alignment="CENTER" layoutX="382.0" layoutY="156.0" prefHeight="25.0" prefWidth="258.0" />
+            <Button fx:id="btn_add" layoutX="206.0" layoutY="73.0" mnemonicParsing="false" onAction="#addTOTable" prefHeight="42.0" prefWidth="110.0" text="اضافة ">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="OPEN_HAND" />
+               </cursor>
+            </Button>
+            <TableView fx:id="table_items" layoutX="69.0" layoutY="196.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="298.0" prefWidth="709.0">
+              <columns>
+                <TableColumn fx:id="col_code" prefWidth="242.0" text="كود الصنف " />
+                <TableColumn fx:id="col_name" prefWidth="275.0" text="اسم الصنف" />
+                  <TableColumn fx:id="col_price" prefWidth="91.0" text="السعر" />
+                  <TableColumn fx:id="col_quantity" prefWidth="91.0" text="الكمية " />
+              </columns>
+            </TableView>
+            <Button fx:id="btn_PRINT" layoutX="199.0" layoutY="514.0" mnemonicParsing="false" onAction="#printButTon" prefHeight="42.0" prefWidth="110.0" text="طباعة">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="OPEN_HAND" />
+               </cursor>
+            </Button>
+            <Label layoutX="648.0" layoutY="109.0" prefHeight="27.0" prefWidth="110.0" text="كود الصنف : ">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txt_Code" alignment="CENTER" layoutX="382.0" layoutY="110.0" prefHeight="25.0" prefWidth="258.0" />
+            <Label layoutX="163.0" layoutY="115.0" prefHeight="27.0" prefWidth="196.0" text="للبحث اضغط علي السهم الايمن ">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Button layoutX="206.0" layoutY="156.0" mnemonicParsing="false" onAction="#deleteItem" prefHeight="25.0" prefWidth="121.0" text="مسح صف">
+               <cursor>
+                  <Cursor fx:constant="OPEN_HAND" />
+               </cursor></Button>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="557.0" prefWidth="1125.0" style="-fx-background-color: #222831;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="playstation.offerController">
+   <top>
+      <Pane prefHeight="45.0" prefWidth="553.0" style="-fx-background-color: #DDDDDD;" BorderPane.alignment="CENTER">
+         <children>
+            <Label alignment="CENTER" layoutX="492.0" layoutY="-10.0" prefHeight="65.0" prefWidth="160.0" text="العروض" textAlignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="39.0" fitWidth="41.0" layoutX="473.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@wins.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+   </top>
+   <bottom>
+      <AnchorPane fx:id="txt_sectionName" prefHeight="455.0" prefWidth="1204.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label alignment="CENTER" layoutX="347.0" layoutY="1.0" prefHeight="45.0" prefWidth="108.0" text="اسم القسم :" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txt_sectionID" alignment="CENTER" layoutX="69.0" layoutY="4.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="33.0" prefWidth="250.0">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </TextField>
+            <Label alignment="CENTER" layoutX="319.0" layoutY="57.0" prefHeight="45.0" prefWidth="125.0" text="الوحدة الاساسية :" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txt_mainUnit" alignment="CENTER" layoutX="69.0" layoutY="60.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="33.0" prefWidth="250.0" promptText="ادخل الوقت بالدقيقة ">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </TextField>
+            <Button layoutX="187.0" layoutY="399.0" mnemonicParsing="false" onAction="#addBtn" prefHeight="43.0" prefWidth="114.0" style="-fx-background-color: #39A2DB;" text="أضافة " textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="31.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@add-picture-icon-15.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="OPEN_HAND" />
+               </cursor>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </Button>
+            <Button layoutX="59.0" layoutY="399.0" mnemonicParsing="false" onAction="#editButton" prefHeight="41.0" prefWidth="112.0" style="-fx-background-color: #FFC107;" text="تعديل" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="33.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@edit%20png%20icon.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="OPEN_HAND" />
+               </cursor>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </Button>
+            <Label alignment="CENTER" layoutX="324.0" layoutY="109.0" prefHeight="45.0" prefWidth="115.0" text="الوحدة الاضافية :" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txt_addUnit" alignment="CENTER" layoutX="69.0" layoutY="112.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="33.0" prefWidth="250.0" promptText="ادخل الوقت الاضافي بالدقيقة ">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </TextField>
+            <Label alignment="CENTER" layoutX="338.0" layoutY="165.0" prefHeight="45.0" prefWidth="101.0" text="تاريخ البداية :" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="335.0" layoutY="228.0" prefHeight="45.0" prefWidth="107.0" text="تاريخ النهاية :" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <DatePicker fx:id="startDate" layoutX="69.0" layoutY="166.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="41.0" prefWidth="248.0" />
+            <DatePicker fx:id="endDate" layoutX="69.0" layoutY="229.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="41.0" prefWidth="248.0" />
+            <TableView fx:id="offerTable" layoutX="478.0" layoutY="14.0" nodeOrientation="RIGHT_TO_LEFT" onMouseClicked="#getSelectedOfferToTxtBox" prefHeight="358.0" prefWidth="641.0">
+              <columns>
+                  <TableColumn fx:id="col_id" prefWidth="54.0" text="id" />
+                <TableColumn fx:id="col_Section" prefWidth="77.0" text="القسم " />
+                <TableColumn fx:id="col_mainItem" prefWidth="88.0" text="الوحدة الاساسية " />
+                  <TableColumn fx:id="col_addItem" prefWidth="125.0" text="الوحدة الاضافية " />
+                  <TableColumn fx:id="col_startDate" prefWidth="83.0" text="تاريخ البداية " />
+                  <TableColumn fx:id="col_endDate" prefWidth="75.0" text="تاريخ النهاية" />
+                  <TableColumn fx:id="col_offerName" prefWidth="158.0" text="اسم العرض " />
+              </columns>
+            </TableView>
+            <Label alignment="CENTER" layoutX="324.0" layoutY="286.0" prefHeight="45.0" prefWidth="115.0" text="اسم العرض : " textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txt_offerName" alignment="CENTER" layoutX="69.0" layoutY="289.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="33.0" prefWidth="250.0">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </TextField>
+            <Label fx:id="lbl_message" alignment="CENTER" contentDisplay="CENTER" layoutX="62.0" layoutY="342.0" prefHeight="40.0" prefWidth="363.0" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </bottom>
+</BorderPane>

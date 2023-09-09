@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="308.0" prefWidth="510.0" style="-fx-background-color: #222831;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="playstation.equimpent">
+   <top>
+      <Pane prefHeight="45.0" prefWidth="553.0" style="-fx-background-color: #DDDDDD;" BorderPane.alignment="CENTER">
+         <children>
+            <Label alignment="CENTER" layoutX="206.0" layoutY="-10.0" prefHeight="65.0" prefWidth="160.0" text="مستلزمات " textAlignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="39.0" fitWidth="41.0" layoutX="187.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@equimpent.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+   </top>
+   <bottom>
+      <AnchorPane prefHeight="230.0" prefWidth="527.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label alignment="CENTER" layoutX="383.0" prefHeight="45.0" prefWidth="50.0" text="الكود :" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txt_code" alignment="CENTER" layoutX="69.0" layoutY="4.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="33.0" prefWidth="250.0">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </TextField>
+            <Label alignment="CENTER" layoutX="345.0" layoutY="56.0" prefHeight="45.0" prefWidth="97.0" text="اسم المعدة :" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txt_equimpentName" alignment="CENTER" layoutX="69.0" layoutY="60.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="33.0" prefWidth="250.0">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </TextField>
+            <Button layoutX="343.0" layoutY="173.0" mnemonicParsing="false" onAction="#addBtn" prefHeight="43.0" prefWidth="114.0" style="-fx-background-color: #39A2DB;" text="أضافة " textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Button>
+            <Button layoutX="189.0" layoutY="174.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="112.0" style="-fx-background-color: #FFC107;" text="تعديل" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Button>
+            <Button layoutX="41.0" layoutY="172.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="112.0" style="-fx-background-color: #DA0037;" text="اخفاء" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Button>
+            <Label fx:id="lbl_message" alignment="CENTER" contentDisplay="CENTER" layoutX="55.0" layoutY="115.0" prefHeight="41.0" prefWidth="402.0" textFill="WHITE" />
+         </children>
+      </AnchorPane>
+   </bottom>
+</BorderPane>

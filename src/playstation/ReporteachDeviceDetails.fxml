@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="670.0" prefWidth="1226.0" style="-fx-background-color: #1A5F7A;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="playstation.ReporteachDeviceDetailsController">
+   <top>
+      <Pane prefHeight="45.0" prefWidth="553.0" style="-fx-background-color: #DDDDDD;" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="39.0" fitWidth="41.0" layoutX="508.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@games.png" />
+               </image>
+            </ImageView>
+            <Label alignment="CENTER" layoutX="558.0" layoutY="-10.0" prefHeight="65.0" prefWidth="160.0" text="تقرير مفصل عن جهاز " textAlignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+   </top>
+   <bottom>
+      <AnchorPane prefHeight="530.0" prefWidth="1013.0" BorderPane.alignment="CENTER">
+         <children>
+            <TableView fx:id="tabel_receipt" layoutX="673.0" layoutY="316.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="191.0" prefWidth="509.0" stylesheets="@styleSheetForTables.css">
+              <columns>
+                <TableColumn fx:id="col_codeItem" prefWidth="75.0" text="الكود " />
+                <TableColumn fx:id="col_itemName" prefWidth="75.0" text="اسم الصنف " />
+                  <TableColumn fx:id="col_itemQuantity" prefWidth="75.0" text="الكمية " />
+                  <TableColumn fx:id="col_payPrice" prefWidth="75.0" text="سعر البيع " />
+                  <TableColumn fx:id="col_totalOrder" prefWidth="101.0" text="الاجمالي " />
+                  <TableColumn fx:id="col_repository" prefWidth="49.0" text="المخزن" />
+              </columns>
+            </TableView>
+            <TableView fx:id="table_transaction" layoutX="45.0" layoutY="46.0" nodeOrientation="RIGHT_TO_LEFT" onMouseClicked="#getOrderOfcustomer" onMouseDragReleased="#getOrderOfcustomer" prefHeight="262.0" prefWidth="1137.0" stylesheets="@styleSheetForTables.css">
+              <columns>
+                <TableColumn fx:id="col_serial" prefWidth="35.0" text="م" />
+                <TableColumn fx:id="col_transactionNumber" prefWidth="69.0" text=" الحركة" />
+                  <TableColumn fx:id="col_startTime" prefWidth="72.0" text="البداية " />
+                  <TableColumn fx:id="col_endTime" prefWidth="84.0" text="النهاية " />
+                  <TableColumn fx:id="col_single_multi" prefWidth="66.0" text="S/M" />
+                  <TableColumn fx:id="col_hour_price" prefWidth="86.0" text="سعر الساعة" />
+                  <TableColumn fx:id="col_totalHours" prefWidth="96.0" text="عدد الساعات " />
+                  <TableColumn fx:id="col_total_mintues" prefWidth="91.0" text="عدد الدقائق" />
+                  <TableColumn fx:id="col_devicePrice" prefWidth="87.0" text="س  الجهاز" />
+                  <TableColumn fx:id="col_orderPrice" prefWidth="108.0" text="س الطالبات" />
+                  <TableColumn fx:id="col_total" prefWidth="62.0" text="الاجمالي " />
+                  <TableColumn fx:id="col_payed" text="المدفوع" />
+                  <TableColumn fx:id="col_room" prefWidth="86.0" text="الغرفة" />
+                  <TableColumn fx:id="col_playerName" prefWidth="105.0" text="اسم الاعب" />
+              </columns>
+            </TableView>
+            <Label alignment="CENTER" layoutX="364.0" layoutY="316.0" prefHeight="34.0" prefWidth="174.0" text="عدد ساعات عمل الجهاز :" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="364.0" layoutY="359.0" prefHeight="34.0" prefWidth="111.0" text="مبيعات الجهاز :" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="119.0" layoutY="359.0" prefHeight="34.0" prefWidth="123.0" text="مبيعات المخزن :" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="364.0" layoutY="421.0" prefHeight="34.0" prefWidth="77.0" text="الإجمالي :" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <Label fx:id="lbl_totalHour" alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="21.0" layoutY="316.0" prefHeight="34.0" prefWidth="332.0" text="." textAlignment="RIGHT" textFill="#ffef08">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <Label fx:id="lbl_totalOfDevice" alignment="CENTER" layoutX="276.0" layoutY="359.0" prefHeight="34.0" prefWidth="77.0" text="." textAlignment="CENTER" textFill="#ffef08">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <Label fx:id="lbl_total" alignment="CENTER" layoutX="276.0" layoutY="421.0" prefHeight="34.0" prefWidth="77.0" text="." textAlignment="CENTER" textFill="#ffef08">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <Label fx:id="lbl_repository" alignment="CENTER" layoutX="25.0" layoutY="359.0" prefHeight="34.0" prefWidth="77.0" text="." textAlignment="CENTER" textFill="#ffef08">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+         </children></AnchorPane>
+   </bottom>
+   <center>
+      <Pane prefHeight="150.0" prefWidth="964.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="1098.0" layoutY="23.0" prefHeight="30.0" prefWidth="72.0" text="اسم الجهاز  :" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <ComboBox fx:id="comBo_DeviceName" layoutX="924.0" layoutY="20.0" prefHeight="35.0" prefWidth="150.0" />
+            <DatePicker fx:id="startDate" layoutX="664.0" layoutY="20.0" prefHeight="35.0" prefWidth="174.0" />
+            <Label layoutX="852.0" layoutY="27.0" prefHeight="22.0" prefWidth="41.0" text="من : " textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <DatePicker fx:id="endDate" layoutX="413.0" layoutY="20.0" prefHeight="36.0" prefWidth="174.0" />
+            <Label layoutX="605.0" layoutY="27.0" prefHeight="22.0" prefWidth="42.0" text="الي  :" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Button layoutX="268.0" layoutY="22.0" mnemonicParsing="false" onAction="#putDataOfEachTransactionIntoTable" prefHeight="33.0" prefWidth="133.0" text="عرض النتائج ">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="32.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@convert.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
+      </Pane>
+   </center>
+</BorderPane>

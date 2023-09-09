@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="1ab5b76e-b07c-4b16-a4b9-19133fd7ff56">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="reportEachDeviceGame" uuid="23ee7317-0acb-4924-a696-c2f219388f82">
+		<parameter name="para_table_startDate" class="java.lang.String">
+			<parameterDescription><![CDATA[]]></parameterDescription>
+		</parameter>
+		<parameter name="para_table_endDate" class="java.lang.String"/>
+		<queryString>
+			<![CDATA[SELECT newdevice.deviceName ,sum(totalOfDevice) ,TRUNCATE( ( (sum(totalHour)+(SUM(totalMinutes))/60 ) ) , 2 )from receiptinformation RIGHT JOIN newdevice ON date <=  $P{para_table_endDate} and date >= $P{para_table_startDate} and newdevice.id = receiptinformation.deviceID GROUP by newdevice.deviceName  ORDER by sum(totalOfDevice) DESC]]>
+		</queryString>
+		<field name="deviceName" class="java.lang.String">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="sum(totalOfDevice)" class="java.lang.Double"/>
+		<field name="TRUNCATE( ( (sum(totalHour)+(SUM(totalMinutes))/60 ) ) , 2 )" class="java.lang.Double"/>
+	</subDataset>
+	<parameter name="para_startDate" class="java.lang.String"/>
+	<parameter name="para_endDate" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT newdevice.deviceName ,sum(totalOfDevice) ,TRUNCATE( ( (sum(totalHour)+(SUM(totalMinutes))/60 ) ) , 2 )from receiptinformation JOIN newdevice WHERE date <= '2022-10-16' and date >= '2022-10-15' and newdevice.id = receiptinformation.deviceID GROUP by newdevice.deviceName]]>
+	</queryString>
+	<field name="deviceName" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="sum(totalOfDevice)" class="java.lang.Double"/>
+	<field name="TRUNCATE( ( (sum(totalHour)+(SUM(totalMinutes))/60 ) ) , 2 )" class="java.lang.Double"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="174" y="34" width="210" height="20" uuid="4b520d93-2ec3-4537-be92-1b146cc0a97a"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="12" isBold="true" isItalic="true" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[تقرير عن كل جهاز]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="115" y="11" width="32" height="20" uuid="49fa3a70-a0d2-4321-a125-a1c68c1c3c5d"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[من :   ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="115" y="34" width="32" height="20" uuid="ab758fd8-fd6b-4806-9832-2af4b9fac13b"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[الي :  ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="15" y="11" width="100" height="20" uuid="5044831f-2f90-4ee0-9f55-c242ca8eafe9"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{para_startDate}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="15" y="34" width="100" height="20" uuid="56d55f09-3029-4a02-af32-efc56bc0610d"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{para_endDate}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch">
+			<componentElement>
+				<reportElement key="table" style="table" x="147" y="0" width="408" height="35" uuid="e2edf961-29de-4a6d-95e6-97277c158d64"/>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="reportEachDeviceGame" uuid="7dbdb609-c48a-4036-a669-786a208e845b">
+						<datasetParameter name="para_table_startDate">
+							<datasetParameterExpression><![CDATA[$P{para_startDate}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="para_table_endDate">
+							<datasetParameterExpression><![CDATA[$P{para_endDate}]]></datasetParameterExpression>
+						</datasetParameter>
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:column width="90" uuid="89ddd844-7d86-4053-970a-788f6ac9914f">
+						<jr:columnHeader style="table_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="90" height="30" uuid="1f5a2b30-55dc-48d9-87c7-be6b446e0233"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="12" isBold="true" isItalic="false"/>
+								</textElement>
+								<text><![CDATA[الاجمالي]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table_TD" height="20">
+							<textField>
+								<reportElement x="0" y="0" width="90" height="20" uuid="1efdf595-8f5a-4e6c-9283-3d2dc65e1481"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="12" isBold="true" isItalic="false"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{sum(totalOfDevice)}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="90" uuid="3db74dc1-f218-4a34-a6a2-0636d6273def">
+						<jr:columnHeader style="table_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="90" height="30" uuid="817261c2-7d0c-4191-bad5-9b70eb1cb494"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="12" isBold="true" isItalic="false"/>
+								</textElement>
+								<text><![CDATA[عدد ساعات العمل]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table_TD" height="20">
+							<textField>
+								<reportElement x="0" y="0" width="90" height="20" uuid="f1dc93e9-0656-48f1-9548-c51580cec4de"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="12" isBold="true"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{TRUNCATE( ( (sum(totalHour)+(SUM(totalMinutes))/60 ) ) , 2 )}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="90" uuid="26f86876-f0fb-49eb-bb1c-bf820ff2678b">
+						<jr:columnHeader style="table_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="90" height="30" uuid="e4948393-ca27-47e7-8a02-8274d541b876"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="12" isBold="true" isItalic="false"/>
+								</textElement>
+								<text><![CDATA[اسم الجهاز]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table_TD" height="20">
+							<textField>
+								<reportElement x="0" y="0" width="90" height="20" uuid="ccae0f82-e90a-4e25-a048-e478fc408b47"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="12" isBold="true" isItalic="false"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{deviceName}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+		</band>
+	</pageHeader>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<textField>
+				<reportElement x="422" y="34" width="80" height="20" uuid="3f465860-bff4-4f63-92f6-657081d2649e"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="502" y="34" width="40" height="20" uuid="4e2ad3f9-70e4-4c73-8282-0f96e48128e5"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="34" width="362" height="20" uuid="240f0bd8-e346-4c2e-a46d-afcc204772f2"/>
+				<textElement>
+					<font size="12" isBold="true" isItalic="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[برمجة وتطوير شركة وتد 01095125678 - 01205214283]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+</jasperReport>

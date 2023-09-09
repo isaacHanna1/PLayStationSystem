@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="602.0" prefWidth="756.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="playstation.DetailReportController">
+   <center>
+      <AnchorPane prefHeight="602.0" prefWidth="729.0" style="-fx-background-color: #1A5F7A;" BorderPane.alignment="CENTER">
+         <children>
+            <Label alignment="CENTER" layoutX="260.0" prefHeight="45.0" prefWidth="163.0" text="تقرير ملخص" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="28.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@receip.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Label>
+            <Pane fx:id="periodPane" layoutX="85.0" layoutY="107.0" prefHeight="52.0" prefWidth="638.0">
+               <children>
+                  <Label alignment="CENTER" layoutX="512.0" layoutY="7.0" prefHeight="34.0" prefWidth="101.0" text="تاريخ البداية  :" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" layoutX="278.0" layoutY="11.0" prefHeight="26.0" prefWidth="98.0" text="تاريخ النهاية : " textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Label>
+                  <DatePicker fx:id="datePickerStart" layoutX="395.0" layoutY="14.0" prefHeight="15.0" prefWidth="106.0" />
+                  <DatePicker fx:id="datePickerEnd" layoutX="167.0" layoutY="14.0" prefHeight="18.0" prefWidth="101.0" />
+                  <Button layoutX="25.0" layoutY="9.0" mnemonicParsing="false" onAction="#detailedReportForPeriod" prefHeight="30.0" prefWidth="96.0" text="عرض">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@open.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+            </Pane>
+            <Button layoutX="616.0" layoutY="54.0" mnemonicParsing="false" onAction="#dailyDetailed" prefHeight="37.0" prefWidth="115.0" text="يومي ">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="26.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Apple_Calendar_Icon.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button layoutX="31.0" layoutY="54.0" mnemonicParsing="false" onAction="#setPaneVisible" prefHeight="37.0" prefWidth="130.0" text="فترة محددة ">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="22.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@calendar-3-logo-icon-png-svg.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button layoutX="225.0" layoutY="57.0" mnemonicParsing="false" onAction="#yearDetailed" prefHeight="36.0" prefWidth="129.0" text="سنوي">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="24.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@calendar-3-logo-icon-png-svg.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button layoutX="423.0" layoutY="54.0" mnemonicParsing="false" onAction="#monthlyDetailed" prefHeight="37.0" prefWidth="130.0" text="شهري">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="23.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@calendar-3-logo-icon-png-svg.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <TableView fx:id="table_detailedReport" layoutX="13.0" layoutY="171.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="365.0" prefWidth="734.0" stylesheets="@styleSheetForTables.css">
+              <columns>
+                <TableColumn fx:id="col_Period" prefWidth="111.0" text="التاريخ " />
+                <TableColumn fx:id="col_games" prefWidth="109.0" text="صالة الالعاب" />
+                  <TableColumn fx:id="col_receipt" prefWidth="100.0" text="الفواتير" />
+                  <TableColumn fx:id="col_total" prefWidth="97.0" text="الاجمالي" />
+                  <TableColumn fx:id="col_expenses" prefWidth="101.0" text="المصروفات" />
+                  <TableColumn fx:id="col_profit" prefWidth="99.0" text="الصافي" />
+                  <TableColumn fx:id="col_hourWork" prefWidth="109.0" text="عدد ساعات العمل" />
+              </columns>
+            </TableView>
+            <Label fx:id="lbl_games" alignment="CENTER" layoutX="552.0" layoutY="543.0" prefHeight="26.0" prefWidth="76.0" text="=" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
+            <Label fx:id="lbl_receipt" alignment="CENTER" layoutX="454.0" layoutY="543.0" prefHeight="26.0" prefWidth="76.0" text="=" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
+            <Label fx:id="lbl_total" alignment="CENTER" layoutX="342.0" layoutY="543.0" prefHeight="26.0" prefWidth="76.0" text="=" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
+            <Label fx:id="lbl_expenses" alignment="CENTER" layoutX="239.0" layoutY="543.0" prefHeight="26.0" prefWidth="76.0" text="=" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
+            <Label fx:id="lbl_profit" alignment="CENTER" layoutX="133.0" layoutY="543.0" prefHeight="26.0" prefWidth="76.0" text="=" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
+            <Label fx:id="lbl_toatalHourWork" alignment="CENTER" layoutX="47.0" layoutY="543.0" prefHeight="26.0" prefWidth="76.0" text="=" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>
